@@ -1,0 +1,17 @@
+[Unit]
+Description=IPTV Live Source Management Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/iptv-server
+ExecStart=/usr/bin/python3 /opt/iptv-server/iptv_manager.py serve
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/opt/iptv-server/logs/service.log
+StandardError=append:/opt/iptv-server/logs/service.log
+
+[Install]
+WantedBy=multi-user.target
