@@ -9,6 +9,9 @@ set -e
 SCRIPT_DIR="/opt/iptv-server"
 LOG_FILE="$SCRIPT_DIR/logs/update.log"
 
+# 确保日志目录存在
+mkdir -p "$SCRIPT_DIR/logs"
+
 # 记录日志
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
