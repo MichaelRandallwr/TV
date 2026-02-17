@@ -10,3 +10,4 @@ lib-*.aar
 # IPTV server output and logs
 /iptv-server/output/
 /iptv-server/logs/
+/iptv-server/__pycache__/
