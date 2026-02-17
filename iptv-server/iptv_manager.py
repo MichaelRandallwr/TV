@@ -165,7 +165,7 @@ class IPTVManager:
                     data = json.loads(result.stdout.decode('utf-8'))
                     if 'streams' in data and len(data['streams']) > 0:
                         return True, round(elapsed * 1000)  # 返回毫秒
-                except:
+                except (json.JSONDecodeError, UnicodeDecodeError, KeyError):
                     pass
             
             return False, None
